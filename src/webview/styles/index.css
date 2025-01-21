@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.app {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content {
+    display: none;
+    height: 100%;
+}
+
+.project-content.active {
+    display: block;
+}
+
+/* 기존 styles.css의 내용을 여기로 복사 */ 

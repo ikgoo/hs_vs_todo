@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "definitions": {
+    "task": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "title": { "type": "string" },
+        "plannedStartDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "plannedEndDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "startDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "endDate": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "assignee": { "type": "string" },
+        "priority": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "progress": {
+          "type": "string",
+          "pattern": "^\\d{1,3}%$"
+        },
+        "waitingReason": { "type": "string" },
+        "previousStatus": { "type": "string" },
+        "statusHistory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": ["planned", "waiting", "inProgress", "completed"]
+              },
+              "startDate": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "endDate": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$|^current$"
+              }
+            },
+            "required": ["status"]
+          }
+        },
+        "duration": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "taskGroup": {
+      "type": "object",
+      "properties": {
+        "planned": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/task" }
+        },
+        "waiting": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/task" }
+        },
+        "inProgress": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/task" }
+        },
+        "completed": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/task" }
+        }
+      }
+    }
+  },
+  "properties": {
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "tasks"],
+        "properties": {
+          "name": { "type": "string" },
+          "tasks": { "$ref": "#/definitions/taskGroup" }
+        }
+      }
+    }
+  }
+} 

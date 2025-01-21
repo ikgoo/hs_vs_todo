@@ -1,0 +1,94 @@
+.task-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: calc(100% - 50px);
+    padding: 20px;
+}
+
+.task-list {
+    background: var(--vscode-editor-background);
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.task-list-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.task-card {
+    background: var(--vscode-editor-background);
+    border: 1px solid var(--vscode-panel-border);
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: move;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.task-card.drag-over {
+    background: var(--vscode-editor-selectionBackground);
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+    background: var(--vscode-editor-inactiveSelectionBackground);
+}
+
+.task-list.drag-over {
+    background: var(--vscode-editor-selectionBackground);
+}
+
+.add-task-button {
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 4px 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.task-card-actions {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    background: inherit;
+}
+
+.task-card-icon {
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 3px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.task-card-icon:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.task-card-icon.edit {
+    color: var(--vscode-editorInfo-foreground);
+}
+
+.task-card-icon.delete {
+    color: var(--vscode-errorForeground);
+} 

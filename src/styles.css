@@ -1,0 +1,201 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+.project-content {
+    display: none;
+    height: 100%;
+}
+
+.project-content.active {
+    display: block;
+}
+
+.task-board {
+    height: 100%;
+    padding: 20px;
+}
+
+.task-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    height: calc(100% - 50px);
+}
+
+.task-list {
+    background: var(--vscode-editor-background);
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+.task-list-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+.task-card {
+    background: var(--vscode-editor-background);
+    border: 1px solid var(--vscode-panel-border);
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 8px;
+    cursor: move;
+}
+
+.task-card.dragging {
+    opacity: 0.5;
+}
+
+.task-list.drag-over {
+    background: var(--vscode-editor-selectionBackground);
+}
+
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.project-button {
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 0;
+    min-width: 100px;
+    height: 32px;
+    line-height: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-button.active {
+    background: var(--vscode-button-hoverBackground);
+}
+
+.add-task-button {
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 4px 8px;
+    margin-left: 8px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.task-input-form {
+    display: none;
+    padding: 10px;
+    background: var(--vscode-input-background);
+    border: 1px solid var(--vscode-input-border);
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.task-input-form.active {
+    display: block;
+}
+
+.task-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 8px;
+    background: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+    border: 1px solid var(--vscode-input-border);
+}
+
+.task-input-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.task-input-button {
+    padding: 4px 8px;
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.project-section {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 10px;
+}
+
+.add-project-button {
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    min-width: 100px;
+    height: 32px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.project-input-form {
+    display: none;
+    padding: 10px;
+    background: var(--vscode-input-background);
+    border: 1px solid var(--vscode-input-border);
+    border-radius: 3px;
+    margin-top: 8px;
+}
+
+.project-input-form.active {
+    display: block;
+}
+
+.project-input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 8px;
+    background: var(--vscode-input-background);
+    color: var(--vscode-input-foreground);
+    border: 1px solid var(--vscode-input-border);
+}
+
+.project-input-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.project-input-button {
+    padding: 4px 8px;
+    background: var(--vscode-button-background);
+    color: var(--vscode-button-foreground);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+} 
