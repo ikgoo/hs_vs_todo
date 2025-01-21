@@ -27,22 +27,35 @@ A Visual Studio Code extension for managing hierarchical tasks using a Kanban-st
 # Project ProjectName
 [planned]
 - Task1
-  * startDate: 2024-03-15
-  * endDate: 2024-03-20
+  * plannedStartDate: 2025-01-03
   * assignee: John Doe
+  * priority: medium
+  * note: test
 
 [waiting]
 - Task2
-  * waitingReason: Dependency
+  * priority: high
 
 [inProgress]
 - Task3
-  * progress: 50%
+  * note: waitingReason: Dependency
 
 [completed]
 - Task4
-  * completionDate: 2024-03-10
+  * plannedStartDate: 2025-01-21
 ```
+
+## Screenshots
+
+![List](./images/preview_01.png)
+![List](./images/preview_02.png)
+![List](./images/preview_03.png)
+![List](./images/preview_04.png)
+![List](./images/preview_05.png)
+![List](./images/preview_06.png)
+![List](./images/preview_07.png)
+![List](./images/preview_08.png)
+
 
 ## Installation
 

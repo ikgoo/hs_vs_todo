@@ -169,7 +169,7 @@ const TaskBoard = ({ project, projectId, onUpdateTask }) => {
                                     className="add-task-button"
                                     onClick={() => setShowAddForm(true)}
                                 >
-                                    + 추가
+                                    + Add
                                 </button>
                             )}
                         </div>

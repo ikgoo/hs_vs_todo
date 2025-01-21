@@ -14,13 +14,13 @@ let currentPanel = null;
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    console.log('확장 프로그램이 활성화되었습니다.');
+    console.log('Extension has been activated.');
 
     // HS 파일 열기 이벤트 감지
     let disposable = vscode.workspace.onDidOpenTextDocument((document) => {
         try {
             if (document.fileName.endsWith('.hs')) {
-                vscode.window.showInformationMessage('HS 파일이 열렸습니다: ' + document.fileName);
+                vscode.window.showInformationMessage('HS file opened: ' + document.fileName);
             }
         } catch (error) {
             console.error('파일 확인 중 오류 발생:', error);
@@ -137,7 +137,7 @@ function activate(context) {
                                 await document.save();
 
                                 vscode.window.showInformationMessage(
-                                    `프로젝트 ${project.name}에 새 태스크가 추가되었습니다: ${message.title}`
+                                    `New task added to project ${project.name}: ${message.title}`
                                 );
                             } catch (error) {
                                 vscode.window.showErrorMessage('태스크 추가 중 오류가 발생했습니다: ' + error.message);
@@ -204,7 +204,7 @@ function activate(context) {
                                 await document.save();
 
                                 vscode.window.showInformationMessage(
-                                    `프로젝트 ${project.name}의 태스크가 ${oldStatus}에서 ${newStatus}로 이동되었습니다.`
+                                    `Task in project ${project.name} moved from ${oldStatus} to ${newStatus}`
                                 );
                             } catch (error) {
                                 vscode.window.showErrorMessage('작업 중 오류가 발생했습니다: ' + error.message);
@@ -253,7 +253,7 @@ function activate(context) {
                                 await vscode.workspace.applyEdit(edit);
                                 await document.save();
 
-                                vscode.window.showInformationMessage(`새 프로젝트가 추가되었습니다: ${message.name}`);
+                                vscode.window.showInformationMessage(`New project added: ${message.name}`);
                             } catch (error) {
                                 vscode.window.showErrorMessage('프로젝트 추가 중 오류가 발생했습니다: ' + error.message);
                             }
@@ -303,7 +303,7 @@ function activate(context) {
                                 }
 
                                 vscode.window.showInformationMessage(
-                                    `프로젝트 이름이 변경되었습니다: ${oldName} → ${message.newName}`
+                                    `Project name has been changed: ${oldName} → ${message.newName}`
                                 );
                             } catch (error) {
                                 vscode.window.showErrorMessage('프로젝트 수정 중 오류가 발생했습니다: ' + error.message);
@@ -312,12 +312,12 @@ function activate(context) {
                         case 'deleteProject':
                             try {
                                 const choice = await vscode.window.showWarningMessage(
-                                    `정말로 '${message.projectName}' 프로젝트를 삭제하시겠습니까?`,
+                                    `Are you sure you want to delete the '${message.projectName}' project?`,
                                     { modal: true },
-                                    '삭제'
+                                    'Delete'
                                 );
 
-                                if (choice === '삭제') {
+                                if (choice === 'Delete') {
                                     const document = activeEditor.document;
                                     const content = document.getText();
                                     const parseResult = parser.parse(content);
@@ -355,7 +355,7 @@ function activate(context) {
                                         projectId: message.projectId
                                     });
 
-                                    vscode.window.showInformationMessage(`프로젝트가 삭제되었습니다: ${projectName}`);
+                                    vscode.window.showInformationMessage(`Project has been deleted: ${projectName}`);
                                 }
                             } catch (error) {
                                 vscode.window.showErrorMessage('프로젝트 삭제 중 오류가 발생했습니다: ' + error.message);
@@ -364,12 +364,12 @@ function activate(context) {
                         case 'deleteTask':
                             try {
                                 const choice = await vscode.window.showWarningMessage(
-                                    `정말로 '${message.taskTitle}' 태스크를 삭제하시겠습니까?`,
+                                    `Are you sure you want to delete the '${message.taskTitle}' task?`,
                                     { modal: true },
-                                    '삭제'
+                                    'Delete'
                                 );
 
-                                if (choice === '삭제') {
+                                if (choice === 'Delete') {
                                     const document = activeEditor.document;
                                     const content = document.getText();
                                     const parseResult = parser.parse(content);
@@ -414,7 +414,7 @@ function activate(context) {
                                         });
                                     }
 
-                                    vscode.window.showInformationMessage(`태스크가 삭제되었습니다: ${message.taskTitle}`);
+                                    vscode.window.showInformationMessage(`Task has been deleted: ${message.taskTitle}`);
                                 }
                             } catch (error) {
                                 vscode.window.showErrorMessage('태스크 삭제 중 오류가 발생했습니다: ' + error.message);
@@ -527,7 +527,7 @@ function activate(context) {
                                 await vscode.workspace.applyEdit(edit);
                                 await document.save();
 
-                                vscode.window.showInformationMessage(`태스크가 수정되었습니다: ${message.updatedTask.title}`);
+                                vscode.window.showInformationMessage(`Task has been updated: ${message.updatedTask.title}`);
                             } catch (error) {
                                 vscode.window.showErrorMessage('태스크 수정 중 오류가 발생했습니다: ' + error.message);
                             }

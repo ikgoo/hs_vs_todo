@@ -19,7 +19,7 @@ const AddProjectForm = ({ initialValue = '', onSubmit, onCancel, isEditing = fal
             <input
                 type="text"
                 className="project-input"
-                placeholder={isEditing ? "프로젝트 이름 수정" : "새 프로젝트 이름"}
+                placeholder={isEditing ? "Edit Project Name" : "New Project Name"}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 onKeyUp={(e) => {
@@ -30,10 +30,10 @@ const AddProjectForm = ({ initialValue = '', onSubmit, onCancel, isEditing = fal
             />
             <div className="project-input-buttons">
                 <button className="project-input-button save-project" onClick={handleSubmit}>
-                    {isEditing ? '수정' : '저장'}
+                    {isEditing ? 'Update' : 'Save'}
                 </button>
                 <button className="project-input-button cancel-project" onClick={onCancel}>
-                    취소
+                    Cancel
                 </button>
             </div>
         </div>

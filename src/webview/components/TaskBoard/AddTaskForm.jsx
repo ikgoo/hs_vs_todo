@@ -61,22 +61,22 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
     return (
         <Modal isOpen={isOpen} onClose={handleCancel}>
             <div className="add-task-form">
-                <h2>{editMode ? '태스크 수정' : '새 태스크 추가'}</h2>
+                <h2>{editMode ? 'Edit Task' : 'Add New Task'}</h2>
                 <div className="form-group">
-                    <label>제목 *</label>
+                    <label>Title *</label>
                     <textarea
                         value={taskData.title || ''}
                         onChange={(e) => setTaskData({
                             ...taskData,
                             title: e.target.value
                         })}
-                        placeholder="태스크 제목을 입력하세요"
+                        placeholder="Enter task title"
                         rows={3}
                         autoFocus
                     />
                 </div>
                 <div className="form-group">
-                    <label>시작 예정일</label>
+                    <label>Planned Start Date</label>
                     <input
                         type="date"
                         value={taskData.properties.plannedStartDate || ''}
@@ -90,7 +90,7 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
                     />
                 </div>
                 <div className="form-group">
-                    <label>종료 예정일</label>
+                    <label>Planned End Date</label>
                     <input
                         type="date"
                         value={taskData.properties.plannedEndDate || ''}
@@ -104,7 +104,7 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
                     />
                 </div>
                 <div className="form-group">
-                    <label>담당자</label>
+                    <label>Assignee</label>
                     <input
                         type="text"
                         value={taskData.properties.assignee || ''}
@@ -115,11 +115,11 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
                                 assignee: e.target.value
                             }
                         })}
-                        placeholder="담당자 이름"
+                        placeholder="Assignee name"
                     />
                 </div>
                 <div className="form-group">
-                    <label>우선순위</label>
+                    <label>Priority</label>
                     <select
                         value={taskData.properties.priority || ''}
                         onChange={(e) => setTaskData({
@@ -130,14 +130,14 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
                             }
                         })}
                     >
-                        <option value="">선택하세요</option>
-                        <option value="high">높음</option>
-                        <option value="medium">중간</option>
-                        <option value="low">낮음</option>
+                        <option value="">Select Priority</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
                     </select>
                 </div>
                 <div className="form-group">
-                    <label>비고</label>
+                    <label>Notes</label>
                     <textarea
                         value={taskData.properties.note || ''}
                         onChange={(e) => setTaskData({
@@ -147,15 +147,15 @@ const AddTaskForm = ({ isOpen, onClose, onSubmit, editMode = false, initialData 
                                 note: e.target.value
                             }
                         })}
-                        placeholder="추가 정보를 입력하세요"
+                        placeholder="Enter additional information"
                         rows={3}
                     />
                 </div>
                 <div className="form-buttons">
                     <button className="submit-button" onClick={handleSubmit}>
-                        {editMode ? '수정' : '저장'}
+                        {editMode ? 'Update' : 'Save'}
                     </button>
-                    <button className="cancel-button" onClick={handleCancel}>취소</button>
+                    <button className="cancel-button" onClick={handleCancel}>Cancel</button>
                 </div>
             </div>
         </Modal>

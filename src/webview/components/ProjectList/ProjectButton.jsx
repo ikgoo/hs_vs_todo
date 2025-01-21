@@ -32,14 +32,14 @@ const ProjectButton = ({ project, projectId, isActive, onClick, onEdit }) => {
                     <span 
                         className="project-button-icon edit"
                         onClick={handleEdit}
-                        title="프로젝트 수정"
+                        title="Edit Project"
                     >
                         ✏️
                     </span>
                     <span 
                         className="project-button-icon delete"
                         onClick={handleDelete}
-                        title="프로젝트 삭제"
+                        title="Delete Project"
                     >
                         🗑️
                     </span>

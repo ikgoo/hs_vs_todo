@@ -46,7 +46,7 @@ const ProjectList = ({ projects, activeProjectId, onProjectSelect }) => {
                         className="add-project-button"
                         onClick={() => setShowAddForm(true)}
                     >
-                        + 새 프로젝트
+                        + New Project
                     </button>
                 )}
             </div>

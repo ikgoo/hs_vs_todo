@@ -2,7 +2,7 @@
     "name": "hs-preview",
     "displayName": "HS Preview",
     "description": "Hierarchical Task Management with Kanban Board",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "hssolution",
     "license": "GPL-3.0",
     "repository": {
@@ -17,7 +17,7 @@
         "vscode": "^1.60.0"
     },
     "categories": [
-        "Other"
+        "Visualization"
     ],
     "activationEvents": [
         "onLanguage:plaintext",

@@ -44,14 +44,14 @@ const TaskCard = ({
                     <span 
                         className="task-card-icon edit"
                         onClick={handleEdit}
-                        title="수정"
+                        title="Edit"
                     >
                         ✎
                     </span>
                     <span 
                         className="task-card-icon delete"
                         onClick={handleDelete}
-                        title="삭제"
+                        title="Delete"
                     >
                         ×
                     </span>
