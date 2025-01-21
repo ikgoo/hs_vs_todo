@@ -1,8 +1,18 @@
 {
-    "name": "your-extension",
-    "displayName": "Your Extension",
-    "description": "Your extension description",
+    "name": "hs-preview",
+    "displayName": "HS Preview",
+    "description": "Hierarchical Task Management with Kanban Board",
     "version": "0.0.1",
+    "publisher": "2pro",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ikgoo/hs_vs_todo.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ikgoo/hs_vs_todo/issues"
+    },
+    "homepage": "https://github.com/ikgoo/hs_vs_todo#readme",
     "engines": {
         "vscode": "^1.60.0"
     },
@@ -174,7 +184,14 @@
         "word-wrap": "^1.2.5",
         "wrappy": "^1.0.2"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+    "keywords": [
+        "task",
+        "kanban",
+        "project management",
+        "todo"
+    ],
+    "author": {
+        "name": "ikgoo",
+        "url": "https://github.com/ikgoo"
+    }
 }
