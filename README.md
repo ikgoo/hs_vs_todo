@@ -47,14 +47,14 @@ A Visual Studio Code extension for managing hierarchical tasks using a Kanban-st
 
 ## Screenshots
 
-![List](./images/preview_01.png)
-![List](./images/preview_02.png)
-![List](./images/preview_03.png)
-![List](./images/preview_04.png)
-![List](./images/preview_05.png)
-![List](./images/preview_06.png)
-![List](./images/preview_07.png)
-![List](./images/preview_08.png)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_01.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_02.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_03.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_04.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_05.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_06.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_07.png?raw=true)
+![List](https://github.com/ikgoo/hs_vs_todo/blob/main/images/preview_08.png?raw=true)
 
 
 ## Installation
